@@ -27,5 +27,6 @@ Al intentar entrar a `facebook.com` o `instagram.com`, aparecerán mensajes de h
 ### Licencia
 
 Este proyecto está bajo la licencia **MIT.**
-Siéntete libre de usarlo y modificarlo según tus necesidades, no olvides los créditos.
+
+Esta extensión está en proceso de publicación en la Chrome Web Store.
 
