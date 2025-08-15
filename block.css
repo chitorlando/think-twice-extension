@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(165deg, #05060c 50%, #340265 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas de fondo */
+/* body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    );
+  animation: float 6s ease-in-out infinite;
+} */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.container {
+  background: transparent;
+  backdrop-filter: blur(20px);
+  border-radius: 3rem;
+  padding: 60px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: slideUp 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.color-titles {
+  color: #06152e;
+  /* font-size: 32px; */
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #26b38b, #8f42dd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.color-subtitle {
+  color: #b3b1b1;
+  /* font-size: 32px; */
+  font-weight: 700;
+  margin-bottom: 16px;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #d2d7df;
+  font-size: 18px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.reflection-text {
+  background: #f7fafc;
+  border-left: 2px solid #24262e;
+  border-right: 2px solid #9966ea;
+  padding: 20px;
+  margin: 24px 0;
+  border-radius: 8px;
+  color: #2d3748;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+button {
+  flex: 1;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#continueBtn {
+  background: linear-gradient(135deg, #770fcd, #9e76e4);
+  color: white;
+  box-shadow: 0 4px 15px rgba(207, 59, 199, 0.3);
+}
+
+#continueBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(226, 8, 204, 0.4);
+}
+
+#goBackBtn {
+  background: linear-gradient(135deg, #73abd8, #3213b1);
+  color: white;
+  box-shadow: 0 4px 15px rgba(46, 42, 167, 0.3);
+}
+
+#goBackBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(131, 72, 225, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Efecto de ondas en los botones */
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.timer {
+  margin-top: 24px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  border-radius: 2px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #173bd8, #e97676);
+  border-radius: 2px;
+  animation: progress 5s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 40px 30px;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .icon {
+    font-size: 48px;
+  }
+}
+
+.url-info {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #056972;
+}
+
+.url-info span {
+  color: #a81c12;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* Badge flotante de la extensión */
+.extension-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border-radius: 0.5rem;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  animation: slideInFromTop 0.6s ease-out 0.3s both;
+  transition: all 0.3s ease;
+}
+
+.extension-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.extension-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Versión responsive del badge */
+@media (max-width: 600px) {
+  .extension-badge {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+  }
+
+  .extension-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .extension-name {
+    font-size: 11px;
+  }
+}
+
+.reflection-text {
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.reflection-message {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.reflection-source {
+  font-size: 0.9em;
+  color: #777;
+}

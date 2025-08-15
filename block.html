@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>¡Espera un momento!</title>
+    <link rel="stylesheet" href="block.css" />
+  </head>
+  <body>
+    <!-- Icono flotante de la extensión -->
+    <div class="extension-badge">
+      <img src="icons/icon48.png" alt="ThinkTwice" class="extension-icon" />
+    </div>
+
+    <div class="container">
+      <h1 class="color-titles">ThinkTwice</h1>
+      <div class="icon">🧠</div>
+      <h2 class="color-subtitle">Espera un momento</h2>
+      <p class="subtitle">Antes de continuar, tómate un segundo...</p>
+
+      <div class="url-info" id="urlInfo" style="display: none">
+        <strong>Vas a:</strong> <span id="targetUrl"></span>
+      </div>
+
+      <div class="reflection-text">
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="button-container">
+        <button id="goBackBtn">Mejor después</button>
+        <button id="continueBtn">Continuar</button>
+      </div>
+    </div>
+
+    <script src="block-ui.js"></script>
+  </body>
+</html>
